@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" ng-app="myApp">
+<html lang="en" ng-app="myApp" ng-controller="rootCtrl">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -11,6 +11,9 @@
 
     <!-- my style -->
     <link rel="stylesheet/less" type="text/css" href="/static/css/index.less" />
+    
+    <!-- my directive -->
+    <link rel="stylesheet/less" type="text/css" href="/static/mrpDirective/mrp.directive.less" />
 </head>
 <body>
     <div ui-view></div>
@@ -23,5 +26,11 @@
 
 <!-- my js -->
 <script src="/static/app/index.js"></script>
+<script src="/static/app/home/home.js"></script>
+<script src="/static/app/markdown/markdown.js"></script>
+<script src="/static/app/gallery/gallery.js"></script>
+
+<!-- my directive -->
+<script src="/static/mrpDirective/mrp.navbar.js"></script>
 
 </html>

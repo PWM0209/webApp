@@ -1,0 +1,97 @@
+@color: #333;
+// mrp-navbar
+.mrp-navbar{
+    height: 45px;
+    width: 100%;
+    background-color: #cdd1d6;
+    position: relative;
+    & > * {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+    }
+    .mrp-logo{
+        left: 0;
+        padding: 0 10px;
+        .logo-icon{
+            font-size: 14px;
+            color: #FFF;
+            box-shadow: 0px 0px 6px #666;
+            border-radius: 50%;
+            text-shadow: 1px 1px 2px #000;
+            display: inline-block;
+            width: 36px;
+            height: 36px;
+            line-height: 36px;
+            text-align: center;
+            background-color: #FFF;
+        }
+        .logo-info{
+            margin-left: 10px;
+            line-height: 36px;
+            display: inline-block;
+            vertical-align: top;
+            font-size: 14px;
+            width: 214px;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+        }
+    }
+    .mrp-menu{
+        left: 280px;
+        ul{
+            padding: 0;
+        }
+        li{
+            list-style: none;
+            font-size: 14px;
+            display: inline-block;
+            padding: 0 15px;
+            position: relative;
+            cursor: pointer;
+            &:hover{
+                text-shadow: 1px 1px 2px #000;
+                color: #FFF;
+            }
+        }
+        & > ul > li{
+            &:first-child::before{
+                content: "|";
+                position: absolute;
+                left: 0;
+                text-shadow:none;
+                color: @color;
+            }
+            &::after{
+                content: "|";
+                position: absolute;
+                right: 0;
+                text-shadow:none;
+                color: @color;
+            }
+        }
+    }
+    .mrp-user{
+        right: 0;
+        .mrp-username{
+            line-height: 36px;
+            display: inline-block;
+            vertical-align: top;
+            font-size: 14px;
+            width: 120px;
+            padding-right: 10px;
+            overflow: hidden;
+            text-align: right;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+        }
+        .mrp-photo{
+            width: 34px;
+            height: 34px;
+            border: 1px solid #DDD;
+            border-radius: 3px;
+            margin-right: 10px;
+        }
+    }
+}

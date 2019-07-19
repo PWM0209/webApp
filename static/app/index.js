@@ -1,30 +1,41 @@
-var myApp = angular.module('myApp', ['ui.router']);
+var myApp = angular.module('myApp', ['ui.router','pages']);
+var pages = angular.module('pages',[]);
 
 myApp.run(function($rootScope, $state, $stateParams) {
     $rootScope.$state = $state;
     $rootScope.$stateParams = $stateParams;
 });
 
+/**
+ * router
+ */
 myApp.config(function($locationProvider, $stateProvider, $urlRouterProvider) {
     $locationProvider.html5Mode(true).hashPrefix("!");
-    
+
     $urlRouterProvider.otherwise('/home');
     $stateProvider
         .state('home', {
             url: '/home',
-            templateUrl: '/static/app/home/home.html',
-            controller:  'homeCtrl'
-        })
-        .state('test', {
-            url: '/test',
-            templateUrl: '/static/app/test/test.html',
-            controller:  'testCtrl'
+            views:{
+                "":{
+                    templateUrl: '/static/app/home/home.html',
+                    controller:  'homeCtrl',
+                },
+                "gallery@home":{
+                    templateUrl: '/static/app/gallery/gallery.html',
+                    controller: 'galleryCtrl'
+                },
+                "markdown@home":{
+                    templateUrl: '/static/app/markdown/markdown.html',
+                    controller: 'markdownCtrl'
+                }
+            }
         });
 });
 
-myApp.controller("homeCtrl",function(){
-    console.log("home");
-})
-myApp.controller("testCtrl",function(){
-    console.log("test");
+/**
+ * root controller
+ */
+myApp.controller("rootCtrl",function(){
+    console.log("--> in rootCtrl");
 })
