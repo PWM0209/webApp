@@ -3,7 +3,9 @@ var pages = angular.module('pages',[]);
 
 myApp.run(function($rootScope, $state, $stateParams) {
     $rootScope.$state = $state;
-    $rootScope.$stateParams = $stateParams;
+    window.state=$rootScope.$stateParams = $stateParams;
+
+    $rootScope.$state.cState = {};
 });
 
 /**
@@ -36,6 +38,18 @@ myApp.config(function($locationProvider, $stateProvider, $urlRouterProvider) {
 /**
  * root controller
  */
-myApp.controller("rootCtrl",function(){
+myApp.controller("rootCtrl",function($scope, $rootScope){
     console.log("--> in rootCtrl");
+    $rootScope.$state.cState.stateName = "home";
+
+    $scope.MenuInfo = {
+        User: {Name:"Mr.P",Img:"/static/img/bobo/bb-bixin.png"},
+        Menus:[
+            {Name: "Home",Id:"home",State:"home"},
+            {Name: "Gallery",Id:"gallery",State:"gallery",Menus:[
+                {Name: "大信",Id:"daxin",State:"daxin"},
+            ]},
+            {Name: "Markdown",Id:"markdown",Menus:[]},
+        ]
+    };
 })

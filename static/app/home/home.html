@@ -1,5 +1,5 @@
-<mrp-navbar></mrp-navbar>
+<mrp-navbar info="MenuInfo"></mrp-navbar>
 
-<div class="view-content" ng-show="$state.current.name == 'home'"></div>
-<div class="view-content" ng-show="$state.current.name == 'gallery'" ui-view="gallery"></div>
-<div class="view-content" ng-show="$state.current.name == 'markdown'" ui-view="markdown"></div>
+<div class="view-content" ng-show="$state.cState.stateName == 'home'"></div>
+<div class="view-content" ng-show="$state.cState.stateName == 'gallery'" ui-view="gallery"></div>
+<div class="view-content" ng-show="$state.cState.stateName == 'markdown'" ui-view="markdown"></div>

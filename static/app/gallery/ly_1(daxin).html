@@ -1,0 +1,377 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>大信三级拆分</title>
+<style>
+/*标一个注释*/
+*{
+	margin: 0;
+	padding: 0;
+}
+
+img{
+	display: block;
+}
+
+li{
+	list-style: none;
+}
+
+a{
+	text-decoration: none;
+}
+
+.header,.banner,.main,.footer{
+	width:1000px;
+	margin: 0 auto;
+}
+.header{
+	height: 170px;
+}
+
+.logo{
+	width: 378px;
+	height: 44px;
+	color: black;
+	margin-bottom: 31px;
+	padding-top: 33px;
+}
+
+.nav{
+	width: 1000px;
+	height: 66px;
+	color: black;
+	background-color: #01509f;
+}
+
+.banner{
+	height: 325px;
+	background-color: #e9c080;
+	margin-bottom: 38px;
+}
+
+.main{
+	height: 693px;
+	margin-bottom: 83px;
+}
+
+.main_top{
+	width: 1000px;
+	height: 152px;
+	margin-bottom: 24px;
+}
+
+.main_top_left{
+	width: 410px;
+	height: 152px;
+	background-color: #4a73b3;
+	float: left;
+}
+.left_img{
+	width: 166px;
+	height: 152px;
+	float: left;
+}
+.right_txt{
+	width: 209px;
+	height: 60px;
+	float: left;
+	padding-left: 24px;
+	padding-top: 25px;
+}
+
+.right_txt h3{
+	font-size: 18px;
+	line-height: 30px;
+	color: #FFFFFF;
+	font-weight: normal;
+}
+.right_txt p{
+	font-size: 12px;
+	line-height: 67px;
+	color: #FFFFFF;
+	font-weight: normal;
+}
+.main_top_mid{
+	width: 410px;
+	height: 152px;
+	background-color: #4dbcf1;
+	float: left;
+	margin: 0 5px;
+}
+
+.main_top_right{
+	width: 170px;
+	height: 152px;
+	background-color: #9c9dcd;
+	float: left;
+}
+
+.main_top_right a{
+	display: block;
+	width: 124px;
+	height: 75px;
+	margin: 0 auto;
+	line-height: 75px;
+	text-align: center;
+	font-size: 20px;
+	color: #FFFFFF;
+}
+
+.mail{
+	border-bottom: 1px #FFFFFF dashed;
+}
+
+.main_middle{
+	width: 1000px;
+	height: 294px;
+	margin-bottom: 40px;	
+}
+
+.main_mid_left{
+	width: 320px;
+	height: 294px;
+	float: left;
+}
+
+.title h3{
+	font-size: 18px;
+	color: #8fb0e3;
+}
+.news_list li{
+	line-height: 44px;
+}
+
+.title{
+	height: 60px;
+	border-bottom: 3px solid #b7c6e3;
+	line-height: 60px;
+	padding-left: 10px;
+	
+}
+
+.main_mid_mid{
+	width: 330px;
+	height: 294px;
+	float: left;
+	margin: 0 5px;
+}
+.main_mid_right{
+	width: 330px;
+	height: 294px;
+	float: left;
+}
+
+.title01{
+	height: 60px;
+	border-bottom: 3px solid #b7c6e3;
+	color: #8fb0e3;
+	line-height: 60px;
+	padding-left: 10px;
+}
+.main_mid_right li{
+	height: 45px;
+	line-height: 45px;
+	margin-bottom: 2px;
+	padding-left: 60px;
+	background-color: #e6f0fc;
+	background-position: 20px center;
+	background-repeat: no-repeat;
+}
+
+.icon1{
+	background-image: url(/static/app/gallery/images/service-icon1.png);
+}
+.icon2{
+	background-image: url(/static/app/gallery/images/service-icon2.png);
+}
+
+.icon3{
+	background-image: url(/static/app/gallery/images/service-icon3.png);
+}
+
+.icon4{
+	background-image: url(/static/app/gallery/images/service-icon4.png);
+}
+
+.icon5{
+	background-image: url(/static/app/gallery/images/service-icon5.png);
+}
+
+
+.main_bottom{
+	width: 1000px;
+	height: 183px;
+	margin-bottom: 83px;
+}
+
+.main_bottom_left{
+	width: 300px;
+	height: 164px;
+	float: left;
+	background-image: url(/static/app/gallery/images/index-bg1.jpg);
+	padding-top: 19px;
+	padding-left: 30px;
+}
+
+.main_bottom_mid{
+	width: 300px;
+	height: 164px;
+	float: left;
+	margin: 0 5px;
+	background-image: url(/static/app/gallery/images/index-bg2.jpg);
+	padding-top: 19px;
+	padding-left: 30px;
+}
+.main_bottom h3{
+	font-size: 20px;
+	color: #666666;
+}
+.main_bottom p{
+	font-size: 12px;
+	color: #666666;
+}
+.main_bottom p{
+	font-size: 12px;
+	color: #666666;
+}
+
+.main_bottom_right{
+	width: 300px;
+	height: 164px;
+	float: left;
+	background-image: url(/static/app/gallery/images/1-160301142331103.jpg);
+	padding-top: 19px;
+	padding-left: 30px;
+}
+
+.footer{
+	height:77px;
+	border-top: 3px #a6a6a6 solid;
+}
+
+.footer_left{
+	width: 410px;
+	height: 80px;
+	float: left;
+}
+
+.footer_left a{
+	line-height: 77px;
+	margin: 0 24px;
+	font-size: 12px;
+	color: #A6A6A6;
+}
+
+.footer_right{
+	width: 377px;
+	height: 80px;
+	float: right;
+	font-size: 12px;
+	color: #A6A6A6;
+	text-align: right;
+	line-height: 80px;
+}
+.footer_left span{
+	color: #A6A6A6;
+	font-size: 12px;
+	margin: 0 auto;
+}
+.footer_right span{
+	color: #000000;
+}
+
+</style>
+</head>
+
+<body>
+<div class="header">
+	<div class="logo"><img src="/static/app/gallery/images/logo.png"/></div>
+    <div class="nav">导航</div>
+</div>
+<div class="banner"><img src="/static/app/gallery/images/banner_06.jpg"/></div>
+<div class="main">
+	<div class="main_top">
+    	<div class="main_top_left">
+        	<div class="left_img"><img src="/static/app/gallery/images/1-1G00Z9454A91.jpg" /></div>
+        	<div class="right_txt">
+            	<h3>大信会计师事务所总审<br/>计师、高级合伙人李洪</h3>
+            	<p>Time:2017-10-09</p>
+            </div>
+        </div>
+    	<div class="main_top_mid">
+        	<div class="left_img"><img src="/static/app/gallery/images/1-1F91Q1512O24.jpg" /></div>
+        	<div class="right_txt">
+            	<h3>大信首席合伙人胡咏华<br/>应邀出席“第三届中国</h3>
+            	<p>Time:2017-09-18</p>
+            </div>
+        </div>
+    	<div class="main_top_right">
+        	<a href="#" class="mail">企业邮箱入口</a>
+        	<a href="#">企业ERP入口</a>
+        </div>
+    </div>
+    <div class="main_middle">
+    	<div class="main_mid_left">
+        	<div class="title"><h3>公司新闻</h3></div>
+        	<div class="news_list">
+            	<ul>
+                	<li>大信会计师事务所总审计师、高级合伙人</li>
+                	<li>大信首席合伙人胡咏华应邀出席“第三届</li>
+                	<li>中共大信湖北分所党支部荣膺湖北省注册</li>
+                	<li>大信召开专题会议 全力促进资本市场业务</li>
+                	<li>大信中标国机集团、中国电科等高端业务</li>
+                </ul>
+            </div>
+        </div>
+    	<div class="main_mid_mid">
+        	<div class="title"><h3>政策法规</h3></div>
+        	<div class="news_list">
+            	<ul>
+                	<li>财政部关于做好会计师事务所执业许可管</li>
+                	<li>财政部关于印发《资产评估基本准则》的</li>
+                	<li>财政部令第89号——会计师事务所执业许</li>
+                	<li>财政部印发《政府会计准则第6号——政府</li>
+                	<li>财政部关于修订印发《企业会计准则第</li>
+                </ul>
+            </div>
+        </div>
+    	<div class="main_mid_right">
+        	<div class="title01"><h3>服务领域</h3></div>
+        	<div class="news_list">
+            	<ul>
+                	<li class="icon1">审计及鉴证</li>
+                	<li class="icon2">股份制改制与上市服务</li>
+                	<li class="icon3">国际会计业务服务</li>
+                	<li class="icon4">工程造价审核与咨询服务</li>
+                	<li class="icon5">税务与会计管理咨询</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="main_bottom">
+    	<div class="main_bottom_left">
+        	<h3>关于大信</h3>
+            <p>大信会计师事务所系由我国现代会计先行者吴英豪<br/>先生创建于1945年。由其学子......</p>
+        </div>
+    	<div class="main_bottom_mid">
+        	<h3>人才招聘</h3>
+            <p>海阔凭鱼跃，天高任鸟飞。大信会<br/>计师事务所是您施展才华的最佳舞<br/>台！......</p>
+        </div>
+    	<div class="main_bottom_right link">
+        	<h3>友情链接</h3>
+        </div>
+    </div>
+</div>
+<div class="footer">
+	<div class="footer_left">
+    	<a href=""#>关于大信</a><span>|</span>
+    	<a href=""#>网站地图</a><span>|</span>
+    	<a href=""#>法律声明</a><span>|</span>
+    	<a href=""#>联系我们</a>
+    </div>
+    <div class="footer_right">Copyright &copy; 2015 All Rights Reserved <span>京ICP备16016630号</span></div>
+</div>
+</body>
+</html>

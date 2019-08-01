@@ -5,11 +5,18 @@
     </div>
     <div class="mrp-menu">
         <ul>
-            <li ng-repeat="i in [1,2,3,4]">菜单test</li>
+            <li ng-repeat="m in info.Menus" ng-class="{'hover':m._hover,'active':$state.cState.stateName == m.State}" ng-mouseenter="mouseEnter(info.Menus,m)" ng-mouseleave="mouseLeave(info.Menus,m)" ng-click="clickMenu(m)">
+                <span ng-bind="m.Name"></span>
+                <ul ng-if="m.Menus.length">
+                    <li ng-repeat="secondM in m.Menus" ng-click="$event.stopPropagation();clickMenu(m,secondM)">
+                        <span ng-bind="secondM.Name"></span>
+                    </li>
+                </ul>
+            </li>
         </ul>
     </div>
     <div class="mrp-user">
-        <span class="mrp-username">Mr.P</span>
+        <span class="mrp-username" ng-bind="info.User.Name"></span>
         <img class="mrp-photo" src="/static/img/bobo/bb-bixin.png" alt="">
     </div>
 </div>

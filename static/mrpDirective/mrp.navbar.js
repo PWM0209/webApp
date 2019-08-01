@@ -30,11 +30,46 @@ function navbar(){
         restrict: "EA",
         replace: true,
         templateUrl: "/static/mrpDirective/mrp.navbar.html",
-        controller: function($scope, $element, $attrs){
+        scope:{
+            info : "="
+        },
+        controller: function($scope, $element, $attrs, $rootScope){
             console.log("--> mrp-navbar controller");
+            $scope.$state = $rootScope.$state;
+            $scope.clickMenu = function(m1, m2){
+                if(m1){
+                    $rootScope.$state.cState.stateName = m1.State;
+                    if(m1._hover){
+                        m1._hover = false;
+                    }
+                }else{
+                    return;
+                }
+                if(m2){
+                    $rootScope.$state.cState.subState = {
+                        stateName : m2.State
+                    }
+                }else if(m1.Menus && m1.Menus.length){
+                    $rootScope.$state.cState.subState = {
+                        stateName : m1.Menus[0].State
+                    }
+                }
+            }
         },
         link: function(scope, element, attrs){
-            console.log("--> mrp-navbar link");
+            console.log("--> mrp-navbar link",scope.info);
+
+            scope.mouseEnter = function(mList,m){
+                mList.forEach((el)=>{
+                    el._hover = el == m;
+                });
+            }
+            scope.mouseLeave = function(mList,m){
+                setTimeout(()=>{
+                    m._hover = false;
+                    scope.$apply();
+                },200);
+            }
         }
     }
 }
