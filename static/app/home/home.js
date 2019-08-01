@@ -1,6 +1,6 @@
 /**
  * home controller
  */
-pages.controller("homeCtrl",function(){
-    console.log("--> homeCtrl");
+pages.controller("homeCtrl",function($rootScope){
+    console.log("--> homeCtrl",$rootScope.$state);
 });

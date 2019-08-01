@@ -8,8 +8,13 @@ html,body{
     font-size: 0;
     color: #333;
     -webkit-font-smoothing: antialiased;
-    & > ui-view{
+    & > div[ui-view]{
         height: 100%;
         width: 100%;
+        & > .view-content{
+            height: ~"calc(100% - 45px)";
+            width: 100%;
+            font-size: 14px;
+        }
     }
 }
