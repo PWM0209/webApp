@@ -68,7 +68,7 @@ function navbar(){
                 setTimeout(()=>{
                     m._hover = false;
                     scope.$apply();
-                },200);
+                },350);
             }
         }
     }

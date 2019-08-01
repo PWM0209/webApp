@@ -16,6 +16,11 @@ myApp.config(function($locationProvider, $stateProvider, $urlRouterProvider) {
 
     $urlRouterProvider.otherwise('/home');
     $stateProvider
+        .state('login', {
+            url: '/login',
+            templateUrl: '/static/app/login/login.html',
+            controller: 'loginCtrl'
+        })
         .state('home', {
             url: '/home',
             views:{
@@ -43,6 +48,7 @@ myApp.controller("rootCtrl",function($scope, $rootScope){
     $rootScope.$state.cState.stateName = "home";
 
     $scope.MenuInfo = {
+        Logo:{Name:"P&L",Img:""},
         User: {Name:"Mr.P",Img:"/static/img/bobo/bb-bixin.png"},
         Menus:[
             {Name: "Home",Id:"home",State:"home"},

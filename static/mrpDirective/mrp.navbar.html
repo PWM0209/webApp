@@ -1,6 +1,6 @@
 <div class="mrp-navbar">
     <div class="mrp-logo">
-        <span class="logo-icon">Mr.P</span>
+        <span class="logo-icon" ng-bind="info.Logo.Name"></span>
         <span class="logo-info">我有一轮月，能跨山海隔</span>
     </div>
     <div class="mrp-menu">
@@ -8,7 +8,7 @@
             <li ng-repeat="m in info.Menus" ng-class="{'hover':m._hover,'active':$state.cState.stateName == m.State}" ng-mouseenter="mouseEnter(info.Menus,m)" ng-mouseleave="mouseLeave(info.Menus,m)" ng-click="clickMenu(m)">
                 <span ng-bind="m.Name"></span>
                 <ul ng-if="m.Menus.length">
-                    <li ng-repeat="secondM in m.Menus" ng-click="$event.stopPropagation();clickMenu(m,secondM)">
+                    <li ng-class="{'active':$state.cState.subState.stateName == secondM.State}" ng-repeat="secondM in m.Menus" ng-click="$event.stopPropagation();clickMenu(m,secondM)">
                         <span ng-bind="secondM.Name"></span>
                     </li>
                 </ul>
