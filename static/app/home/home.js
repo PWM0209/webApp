@@ -1,6 +1,10 @@
 /**
  * home controller
  */
-pages.controller("homeCtrl",function($rootScope){
-    console.log("--> homeCtrl",$rootScope.$state);
+pages.controller("homeCtrl",function($rootScope, $state){
+    console.log("--> homeCtrl");
+    
+    if (!$rootScope.currentUser) {
+        $state.go("login");
+    };
 });

@@ -33,8 +33,7 @@ function navbar(){
         scope:{
             info : "="
         },
-        controller: function($scope, $element, $attrs, $rootScope){
-            console.log("--> mrp-navbar controller");
+        controller: function($scope, $element, $attrs, $rootScope, $state){
             $scope.$state = $rootScope.$state;
             $scope.clickMenu = function(m1, m2){
                 if(m1){
@@ -54,11 +53,14 @@ function navbar(){
                         stateName : m1.Menus[0].State
                     }
                 }
-            }
+            };
+            $scope.plLogout = function(){
+                delete $rootScope.MenuInfo.User;
+                window.localStorage.removeItem("PL_User");
+                $state.go("login");
+            };
         },
         link: function(scope, element, attrs){
-            console.log("--> mrp-navbar link",scope.info);
-
             scope.mouseEnter = function(mList,m){
                 mList.forEach((el)=>{
                     el._hover = el == m;

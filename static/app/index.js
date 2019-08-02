@@ -43,13 +43,22 @@ myApp.config(function($locationProvider, $stateProvider, $urlRouterProvider) {
 /**
  * root controller
  */
-myApp.controller("rootCtrl",function($scope, $rootScope){
+myApp.controller("rootCtrl",function($scope, $rootScope, $state){
     console.log("--> in rootCtrl");
     $rootScope.$state.cState.stateName = "home";
+    $rootScope.UserMap = {
+        "Mr.P":{
+            Name:"Mr.P",
+            Img:"/static/img/bobo/bb-bixin.png"
+        },
+        "Mrs.L":{
+            Name:"Mrs.L",
+            Img:"/static/img/bobo/pink-lueluelue.png"
+        },
+    }
 
-    $scope.MenuInfo = {
+    $rootScope.MenuInfo = {
         Logo:{Name:"P&L",Img:""},
-        User: {Name:"Mr.P",Img:"/static/img/bobo/bb-bixin.png"},
         Menus:[
             {Name: "Home",Id:"home",State:"home"},
             {Name: "Gallery",Id:"gallery",State:"gallery",Menus:[
@@ -57,5 +66,11 @@ myApp.controller("rootCtrl",function($scope, $rootScope){
             ]},
             {Name: "Markdown",Id:"markdown",Menus:[]},
         ]
+    };
+
+    $rootScope.currentUser = JSON.parse(window.localStorage.getItem("PL_User"));
+    if ($rootScope.currentUser) {
+        $rootScope.MenuInfo.User = $rootScope.currentUser;
+        console.log($rootScope.currentUser);
     };
 })

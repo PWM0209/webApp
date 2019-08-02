@@ -17,6 +17,9 @@
     </div>
     <div class="mrp-user">
         <span class="mrp-username" ng-bind="info.User.Name"></span>
-        <img class="mrp-photo" src="/static/img/bobo/bb-bixin.png" alt="">
+        <img class="mrp-photo" src="{{info.User.Img}}" alt="">
+        <ul class="mrp-user-menu">
+            <li ng-click="plLogout()">Logout</li>
+        </ul>
     </div>
 </div>

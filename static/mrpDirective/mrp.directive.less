@@ -115,6 +115,7 @@
     }
     .mrp-user{
         right: 0;
+        height: 100%;
         .mrp-username{
             line-height: 36px;
             display: inline-block;
@@ -126,6 +127,7 @@
             text-align: right;
             text-overflow: ellipsis;
             white-space: nowrap;
+            margin-top: 4px;
         }
         .mrp-photo{
             display: inline-block;
@@ -133,7 +135,36 @@
             height: 34px;
             border: 1px solid #DDD;
             border-radius: 3px;
-            margin-right: 10px;
+            margin-right: 20px;
+            margin-top: 4px;
+        }
+        .mrp-user-menu{
+            position: absolute;
+            font-size: 14px;
+            right: 20px;
+            width: 120px;
+            border: 1px solid #cdd1d6;
+            background-color: #FFF;
+            text-align: right;
+            padding: 3px 0px;
+            top: 100%;
+            border-radius: 3px;
+            box-shadow: 0 0 5px #cdd1d6;
+            display: none;
+            li{
+                padding: 0 10px;
+                height: 25px;
+                line-height: 20px;
+                &:hover{
+                    background-color: #cdd1d6;
+                    text-shadow: 1px 1px 2px #000;
+                    color: #FFF;
+                    cursor: pointer;
+                }
+            }
+        }
+        &:hover .mrp-user-menu{
+            display: block;
         }
     }
 }

@@ -1,1 +1,8 @@
 <div class="snow-container"></div>
+
+<div class="login-user-group">
+    <div class="login-user" ng-repeat="u in UserMap" ng-click="selectLoginUser(u)">
+        <img ng-src="{{u.Img}}" alt="">
+        <div class="login-user-mask"><span ng-bind="u.Name"></span></div>
+    </div>
+</div>
